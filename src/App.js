@@ -8,6 +8,17 @@ function App() {
   const [error, setError] = useState(false);
   const [list, setList] = useState([]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    try {
+      let color = new Values(color).all(10)
+      setList(color)
+    } catch (error){
+      setError(true)
+      console.log(error)
+    }
+  }
+
 
   return <h2>color generator project</h2>
 }
